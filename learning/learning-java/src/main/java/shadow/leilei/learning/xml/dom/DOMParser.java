@@ -102,6 +102,8 @@ public class DOMParser {
 			System.out.println("Node value: " + node.getNodeValue());
 		}else if(NodeTypeEnum.COMMENT_NODE.nodeType == node.getNodeType()){
 			System.out.println("Node value: " + node.getNodeValue());
+		}else if(NodeTypeEnum.CDATA_SECTION_NODE.nodeType == node.getNodeType()){
+			System.out.println("Node value: " + node.getNodeValue());
 		}
 	}
 	
