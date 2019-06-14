@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 用于xml解析练习使用的xml文件 -->
+<mapper namespace="com.frontier.demo.mapper.CespPowerMapper">
+  <resultMap id="BaseResultMap" type="com.frontier.demo.model.CespPower">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="MAX_VAL" jdbcType="BIGINT" property="maxVal" />
+    <result column="MIN_VAL" jdbcType="BIGINT" property="minVal" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="DESC" jdbcType="VARCHAR" property="desc" />
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    ID, MAX_VAL, MIN_VAL, DATETIME, DESC
+  </sql>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cesp_power
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cesp_power
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  
+  <insert id="insert" parameterType="com.frontier.demo.model.CespPower">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into cesp_power (MAX_VAL, MIN_VAL, DATETIME, 
+      DESC)
+    values (#{maxVal,jdbcType=BIGINT}, #{minVal,jdbcType=BIGINT}, #{datetime,jdbcType=TIMESTAMP}, 
+      #{desc,jdbcType=VARCHAR})
+  </insert>
+  
+  <update id="updateByPrimaryKey" parameterType="com.frontier.demo.model.CespPower">
+    update cesp_power
+    set MAX_VAL = #{maxVal,jdbcType=BIGINT},
+      MIN_VAL = #{minVal,jdbcType=BIGINT},
+      DATETIME = #{datetime,jdbcType=TIMESTAMP},
+      DESC = #{desc,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
