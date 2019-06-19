@@ -10,6 +10,7 @@
     <result column="DESC" jdbcType="VARCHAR" property="desc" />
   </resultMap>
   
+  <!-- 基本字段引用 -->
   <sql id="Base_Column_List">
     ID, MAX_VAL, MIN_VAL, DATETIME, DESC
   </sql>
