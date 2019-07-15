@@ -6,5 +6,42 @@
   <packaging>pom</packaging>
   <modules>
   	<module>learning-java</module>
+  	<module>learning-java-common</module>
   </modules>
+  
+  <build>
+  	<plugins>
+  	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>2.6</version>
+			<configuration>
+				<encoding>UTF-8</encoding>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>2.0.2</version>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+				<encoding>UTF-8</encoding>
+			</configuration>
+		</plugin>
+  		<plugin>  
+			<groupId>org.apache.maven.plugins</groupId>  
+			<artifactId>maven-javadoc-plugin</artifactId>  
+			<version>2.9.1</version>  
+			<configuration>
+				<aggregate>true</aggregate>
+				<charset>UTF-8</charset>
+      			<docencoding>UTF-8</docencoding>
+      			<ecoding>UTF-8</ecoding>
+      			<!-- <additionalparam>-Xdoclint:none</additionalparam> -->
+      			<show>private</show>
+			</configuration>  
+		</plugin>
+  	</plugins>
+  </build>
 </project>

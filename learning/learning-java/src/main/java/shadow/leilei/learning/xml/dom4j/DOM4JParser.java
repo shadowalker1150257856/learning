@@ -13,6 +13,12 @@ import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 
+/**
+ * 实验DOM4J解析功能
+ * 
+ * @author Grandata
+ *
+ */
 public class DOM4JParser {
 
 	/**
@@ -96,6 +102,7 @@ public class DOM4JParser {
 	}
 
 	/**
+	 * <p>
 	 * DOM4J解析xml文件示例 </br>
 	 * DOM4J是大多开源项目的标配解析工具 </br>
 	 * DOM4J支持xpath路径解析 </br>
@@ -104,6 +111,7 @@ public class DOM4JParser {
 	 * text接口仅对text类型节点起作用，返回节点的值。</br>
 	 * 直接获取List<Element>会忽略文本中的注释节点。 </br>
 	 * xpath的使用需要引入jaxen包
+	 * </p>
 	 */
 	public static void main(String[] args) {
 

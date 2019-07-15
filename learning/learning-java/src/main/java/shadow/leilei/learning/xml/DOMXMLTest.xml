@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE root PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<root name="rootElement">
+<first id="firstEl">select * from table1</first>
+<second id="secondEl">
+<subEl>insert into values</subEl>
+</second>
+<!--第三节点的注释-->
+<third id="thirdEl">update table1 set 1 = 1 where 1 = 1</third>
+</root>
